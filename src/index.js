@@ -13,8 +13,12 @@ fastify.register(app);
 
 const start = async () => {
   try {
-    await fastify.listen({ port: PORT });
-    console.log(`Server is listening on port http://localhost:${PORT}`);
+    await fastify.listen({
+      port: PORT,
+      host: "0.0.0.0",
+      bindHost: false,
+    });
+    console.log(`Server is listening on http://localhost:${PORT}`);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

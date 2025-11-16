@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test:load": "k6 run k6/load-test.js",
     "start": "npx nodemon ./src/index.js"
   },
   "keywords": [],
